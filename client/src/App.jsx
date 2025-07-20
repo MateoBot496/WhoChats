@@ -5,7 +5,7 @@ import Chatwindow from './assets/chatwindow'
 import Navbar from './assets/navbar'
 import RandomChat from './assets/randomchat'
 
-const socket = io("http://localhost:3000", {autoConnect : false})
+const socket = io("https://whochats.onrender.com/", {autoConnect : false})
 
 function App() {
   const [connected, setConnected] = useState(false)
