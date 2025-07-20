@@ -24,7 +24,7 @@ export default function Chatwindow({users, chat, socket, nick, showUsers}){
 
         const now = new Date();
         const time = now.toLocaleTimeString();
-        socket.emit("send-msg", [time, nick + ":" , msg])
+        socket.emit("send-msg", [time, nick , msg])
         setMsg("")
     }
     
@@ -42,7 +42,7 @@ export default function Chatwindow({users, chat, socket, nick, showUsers}){
                         ref={botref}
                         >
                             <span className=" text-gray-400">{msg[0]}</span> {/* Hora */}
-                            <span className=" font-semibold text-blue-600">{msg[1]}</span> {/* Usuario */}
+                            <span className=" font-semibold text-blue-600">{msg[1] + " :"}</span> {/* Usuario */}
                             <p className=" text-gray-800 break-words overflow-hidden">{msg[2]}</p> {/* Mensaje */}
                             
                         </div>
