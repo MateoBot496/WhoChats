@@ -1,11 +1,11 @@
 import { useState } from 'react';
 import logo from './whochatslogo.png'; 
-export default function Navbar({setShowUsers}){
+export default function Navbar({setShowUsers, setConnected}){
     const [menu, setMenu] = useState(false)
     return(
         <>
             <div className="border-2 w-full h-15 absolute top-0 flex items-center p-2 bg-gray-300">
-                <img src={logo} alt="Logo" className="h-14 w-32 object-cover fixed left-0" />
+                <img src={logo} alt="Logo" onClick={() => {setConnected(false)}} className="h-14 w-32 object-cover fixed left-0 cursor-pointer" />
                 <div className="flex ml-auto" id='campanita'>
                     <a href="#" className="border-r-1 mr-5 pr-5"> {/*CAMPANITA*/}
                         <svg className="" xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 24 24">

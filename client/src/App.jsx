@@ -32,7 +32,7 @@ function App() {
 
   return (
     <>
-      <Navbar setShowUsers={setShowUsers}/>
+      <Navbar setShowUsers={setShowUsers} setConnected={setConnected}/>
       {connected ? (mode === "general" ? (
         <>
         <Chatwindow users={users} chat={chat} socket={socket} nick={nick} showUsers={showUsers}/>
