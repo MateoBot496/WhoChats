@@ -32,17 +32,17 @@ export default function Chatwindow({users, chat, socket, nick, showUsers}){
         <>  
         <div className="chatwindow absolute top-15 h-[85vh]">
             <div className="chat h-full ">
-                <div className="chatlog flex flex-col gap-1 border-2 overflow-y-auto scrollbar-custom scrollbar-hover">
+                <div className="chatlog flex flex-col gap-1 overflow-y-auto scrollbar-custom scrollbar-hover">
                     {
                     chat.map((msg, index) => (
                         <div
-                        className={`flex gap-2 mb-2 p-2 rounded-lg shadow-sm w-md border-2
+                        className={`flex gap-2 mb-2 p-2 rounded-lg shadow-sm w-[100%] border-2
                             ${msg[1] === nick ? "self-end bg-blue-100 border-blue-800" : "bg-gray-100 border-gray-300"}`}
                         key={index}
                         ref={botref}
                         >
                             <span className=" text-gray-400">{msg[0]}</span> {/* Hora */}
-                            <span className=" font-semibold text-blue-600">{msg[1] + " :"}</span> {/* Usuario */}
+                            <span className=" font-semibold text-blue-600 whitespace-nowrap">{msg[1] + " :"}</span> {/* Usuario */}
                             <p className=" text-gray-800 break-words overflow-hidden">{msg[2]}</p> {/* Mensaje */}
                             
                         </div>
@@ -57,7 +57,7 @@ export default function Chatwindow({users, chat, socket, nick, showUsers}){
             </div>
 
 
-            <div className={` rounded-xl p-2 absolute border-2 w-full h-[85vh] bg-white ${showUsers || isDesktop ? "visible" : "hidden"} md:w-[20vw] md:relative`} id="USUARIOS">
+            <div className={` rounded-b-xl p-2 absolute w-full h-[85vh] backdrop-blur backdrop-saturate-250 shadow-md ${showUsers || isDesktop ? "visible" : "hidden"} md:w-[20vw] md:relative`} id="USUARIOS">
                 <h1 className="font-bold text-green-600">Usuarios conectados:</h1>
                 <ul>
                     {users.map(user => (

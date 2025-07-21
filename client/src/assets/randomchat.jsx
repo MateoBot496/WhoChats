@@ -52,7 +52,7 @@ export default function RandomChat({pvchat, socket, nick}){
         <>  
             <div className="chatwindow absolute top-15 h-[85vh]">
                 <div className="chat h-full">
-                    <div className="chatlog flex flex-col gap-1 border-2 overflow-y-auto scrollbar-custom scrollbar-hover">
+                    <div className="chatlog flex flex-col gap-1 overflow-y-auto scrollbar-custom scrollbar-hover">
                         {mode === "matched" && 
                             pvchat.map((msg, index) => (
                                 
@@ -62,8 +62,8 @@ export default function RandomChat({pvchat, socket, nick}){
                                 key={index}
                                 ref={botref}
                                 >
-                                    <span className=" text-gray-400">{msg[0]}</span> {/* Hora */}
-                                    <span className=" font-semibold text-blue-600">{msg[1]+ " :"}</span> {/* Usuario */}
+                                    <span className=" text-gray-400 hidden sm:block">{msg[0]}</span> {/* Hora */}
+                                    <span className=" font-semibold text-blue-600 whitespace-nowrap">{msg[1]+ " :"}</span> {/* Usuario */}
                                     <p className=" text-gray-800 break-words overflow-hidden">{msg[2]}</p> {/* Mensaje */}
                                     
                                 </div>
@@ -120,7 +120,7 @@ export default function RandomChat({pvchat, socket, nick}){
                     </div>
                     <div className="flex justify-center items-center w-full flex-col gap-1 md:flex-row">
                         <input type="text" className="chatinput" value={msg} placeholder="Escribe tu mensaje..." onChange={(e) => setMsg(e.target.value)} onKeyDown={(e) => {if (e.key === "Enter") {e.preventDefault(); sendMsg();}}}/>
-                        {mode === "matched" ? <button onClick={sendMsg}>Enviar</button> : <button disabled className="bg-gray-200">Enviar</button>}
+                        {mode === "matched" ? <button onClick={sendMsg}>Enviar</button> : <button disabled className="!bg-gray-400 !text-gray-200">Enviar</button>}
                         {mode === "matched" && <button onClick={handleSkip}>SKIP</button>}
                         {mode === "waiting" && <button onClick={handleCancel}>CANCELAR BUSQUEDA</button>}
                         {mode === "rejected" && <button onClick={handleSearch}>BUSCAR NUEVO COMPA</button>}

@@ -73,6 +73,8 @@ body{
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  background-image: url("assets/pexels-jplenio-1103970.webp");
+  background-size: cover;
 }
 
 .chatwindow{
@@ -91,9 +93,7 @@ body{
 }
 
 .chatlog{
-  background-color: rgb(214, 214, 214);
   flex-grow: 1;
-
   width: min(90%, 800px);
   
   padding: 1vh;

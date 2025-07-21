@@ -32,7 +32,7 @@ function App() {
 
   return (
     <>
-      <Navbar setShowUsers={setShowUsers} setConnected={setConnected}/>
+      <Navbar setShowUsers={setShowUsers} setConnected={setConnected} setMode={setMode}/>
       {connected ? (mode === "general" ? (
         <>
         <Chatwindow users={users} chat={chat} socket={socket} nick={nick} showUsers={showUsers}/>
@@ -46,6 +46,10 @@ function App() {
       :
 
       <>
+        <h1 className='text-5xl font-bold md:text-9xl'>WHOCHATS</h1>
+        <p          style={{            width: "min(1000px, 100%)",            marginBottom: "10%",            textAlign: "center"          }}        >
+          WhoChats is a simple, fast, and anonymous 1-on-1 chat where you can talk to strangers from anywhere in the world. No sign-up, no profiles — just click "Start" and get instantly connected. Whether you're looking for a deep conversation, a quick laugh, or just to pass the time, WhoChats makes meeting new people easy and fun.
+        </p>
         <input type="text" name="" value={nick} onChange={(e) => setNick(e.target.value)} placeholder='Nickname...'/>
         <select onChange={(e) => setMode(e.target.value)}>
           <option value="random" > Random </option>

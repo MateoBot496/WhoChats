@@ -30,7 +30,7 @@ function matchOrWait(socket, waitingUsers, parejas, pvchatlogs, pairsids, update
 
         pvchatlogs.set(pairid, [[
             "SERVER", "SERVER",
-            `Has encontrado pareja! Han sido emparejados los usuarios ${users.get(socket.id).nickname} y ${users.get(pareja.id).nickname}. Vuestro pair id es: ${pairid}`
+            `Has encontrado pareja! Han sido emparejados los usuarios ${users.get(socket.id).nickname} y ${users.get(pareja.id).nickname}.`
         ]]);
 
         console.log("USUARIOS EMPAREJADOS: PAIR ID :", pairid);
